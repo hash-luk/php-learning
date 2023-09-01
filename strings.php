@@ -1,4 +1,5 @@
 <?php 
 
 $idade = 24;
-echo "Hello World, I'm {$idade} years old";
+echo "Hello World" . PHP_EOL;
+echo "\tI'm {$idade} years old";
