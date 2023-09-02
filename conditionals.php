@@ -10,3 +10,5 @@ if($idade >= 18 AND $nome == "Lucas")
 else 
     echo "Você só tem {$idade} anos. Você não pode entrar!\n";
 
+echo PHP_EOL . "Adeus!";
+
