@@ -1,5 +1,5 @@
 <?php
-
+$contador = 1;
 $studentsMax = 15;
 $students = [];
 $studentsName = array(
@@ -33,3 +33,8 @@ for($i = 1; $i <= $studentsMax; $i++) {
 foreach($students as $student) {
     echo $student["id"] ." - ". $student["nome"] . PHP_EOL;
 }
+
+// while ($contador <= 15) {
+//     echo "#$contador";
+//     $contador++;
+// }
