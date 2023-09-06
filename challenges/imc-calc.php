@@ -16,7 +16,7 @@ class IMCCalculator {
     //Function that calculates imc and returns the result
     public function calculateIMC() {
         $heightInMeters = $this->height / 100;
-        $imc = $this->weight / ($heightInMeters * $heightInMeters);
+        $imc = $this->weight / ($heightInMeters ** 2);
         return $imc;
     }
 
