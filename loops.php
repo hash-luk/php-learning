@@ -34,7 +34,9 @@ foreach($students as $student) {
     echo $student["id"] ." - ". $student["nome"] . PHP_EOL;
 }
 
-// while ($contador <= 15) {
-//     echo "#$contador";
-//     $contador++;
-// }
+while ($contador <= 15) {
+    if($contador == 13) {
+        echo "#$contador" . PHP_EOL;
+    }
+    $contador++;
+}
