@@ -23,9 +23,28 @@ $contasCorrentes["145.987.327-64"] = deposit($contasCorrentes["145.987.327-64"],
 ownerCapitalLetters($contasCorrentes["123.456.789-10"]);
 
 unset($contasCorrentes["121.313.012-93"]);
+?>
 
-foreach ($contasCorrentes as $cpf => $conta) {
-    ["titular" => $titular, "saldo" => $saldo] = $conta;
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    showMessage("$cpf - $titular - $saldo");
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas corrente</title>
+</head>
+<body>
+    <h1>Lista de contas corrente</h1>
+
+    <dl>
+        <?php
+        foreach ($contasCorrentes as $cpf => $conta) {
+            ["titular" => $titular, "saldo" => $saldo] = $conta;
+
+            // showMessage("$cpf - $titular - $saldo");
+            showAccount($cpf, $conta);
+        }
+        ?>
+    </dl>
+</body>
+</html>
