@@ -23,5 +23,7 @@ $contasCorrentes["145.987.327-64"] = deposit($contasCorrentes["145.987.327-64"],
 ownerCapitalLetters($contasCorrentes["123.456.789-10"]);
 
 foreach ($contasCorrentes as $cpf => $conta) {
-    showMessage("$cpf - {$conta['titular']} - {$conta['saldo']}");
+    ["titular" => $titular, "saldo" => $saldo] = $conta;
+
+    showMessage("$cpf - $titular - $saldo");
 }
