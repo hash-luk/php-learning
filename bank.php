@@ -20,6 +20,8 @@ $contasCorrentes = [
 $contasCorrentes["123.456.789-10"] = withdraw($contasCorrentes["123.456.789-10"], 1050);
 $contasCorrentes["145.987.327-64"] = deposit($contasCorrentes["145.987.327-64"], -1050);
 
+ownerCapitalLetters($contasCorrentes["123.456.789-10"]);
+
 foreach ($contasCorrentes as $cpf => $conta) {
     showMessage("$cpf - {$conta['titular']} - {$conta['saldo']}");
 }

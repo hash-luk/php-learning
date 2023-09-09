@@ -30,3 +30,8 @@ function deposit(array $account, float $value):array
 
     return $account;
 }
+
+function ownerCapitalLetters(array &$account)
+{
+    $account["titular"] = mb_strtoupper($account["titular"]);
+}
