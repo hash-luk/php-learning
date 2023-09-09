@@ -1,5 +1,20 @@
 <?php
 
+function showMessage($message) {
+    echo $message . PHP_EOL;
+}
+
+function withdraw($account, $value) {
+
+    if($value > $account["saldo"]) {
+        showMessage("{$account['titular']} não possui saldo suficiente para saque!");
+    } else {
+        $account["saldo"] -= $value;
+    }
+
+    return $account;
+}
+
 $contasCorrentes = [
     '123.456.789-10' => [
         "titular" => "Lucas",
@@ -15,8 +30,8 @@ $contasCorrentes = [
     ]
 ];
 
-$contasCorrentes["123.456.789-10"]["saldo"] -= 500;
+$contasCorrentes["123.456.789-10"] = withdraw($contasCorrentes["123.456.789-10"], 1050);
 
 foreach ($contasCorrentes as $cpf => $conta) {
-    echo "$cpf - {$conta['titular']} - {$conta['saldo']} \n";
+    showMessage("$cpf - {$conta['titular']} - {$conta['saldo']}");
 }
