@@ -22,6 +22,8 @@ $contasCorrentes["145.987.327-64"] = deposit($contasCorrentes["145.987.327-64"],
 
 ownerCapitalLetters($contasCorrentes["123.456.789-10"]);
 
+unset($contasCorrentes["121.313.012-93"]);
+
 foreach ($contasCorrentes as $cpf => $conta) {
     ["titular" => $titular, "saldo" => $saldo] = $conta;
 
