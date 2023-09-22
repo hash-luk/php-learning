@@ -1,14 +1,32 @@
 <?php 
 
 $notas = [
-    10,
-    9,
-    8,
-    7
+    [
+        "nome" => "Maria",
+        "nota" => 9
+    ],
+    [
+        "nome" => "Pedro",
+        "nota" => 5
+    ],
+    [
+        "nome" => "Lucas",
+        "nota" => 10
+    ]
 ];
 
-$notasOrdenadas = $notas;
 
-sort($notasOrdenadas);
+function ordenaNotas(array $nota1, array $nota2): int {
+    if($nota1["nota"] > $nota2["nota"]) {
+        return -1;
+    }
 
-var_dump($notasOrdenadas);
+    if($nota2["nota"] > $nota1["nota"]) {
+        return 1;
+    }
+
+    return 0;
+}
+
+usort($notas, "ordenaNotas");
+var_dump($notas);
