@@ -61,3 +61,17 @@ $sumOfmedals = array_reduce($medalsData, function($counterMedals ,$item) {
 
 echo "Número de medalhas distribuídas ao total: \n\n";
 echo "{$sumOfmedals} medalhas\n\n";
+
+
+//Funcionalidade adicional: filtar apenas os países que não contenham espaço no nome
+
+$countrysWithNoSpaceName = array_filter($medalsData, function($item) {
+    return strpos($item["pais"], " ") === false;
+});
+
+
+echo "Países com nome sem espaço: \n";
+
+foreach($countrysWithNoSpaceName as $country) {
+    echo "{$country['pais']} \n";
+}
