@@ -1,9 +1,7 @@
 <?php
-
+$nome = "Lucas Patrick";
 $email = "lucas@empresa.com.br";
 $senha = "12345";
-
-
 
 //strpos retorna a possição de uma caractere que será verificado, dentro de uma string
 $pos = mb_strpos($email, "@");
@@ -22,3 +20,35 @@ mb_strtoupper($usuario);
 
 //Recebe uma string como parâmetro e altera para letras minúsculas
 mb_strtolower($usuario);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Utilizando o separador que é passsado como primeiro parâmetro, divide a string, devolvendo um array
+[$nome, $sobrenome] = explode(" ", $nome);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$telefones = [
+    "(24) 99999 - 9999",
+    "(22) 22222 - 2222",
+    "(21) 33333 - 3333",
+];
+
+
+//Separa o array, utilizando o separador que foi passado como primeiro parâmetro
+echo implode(PHP_EOL, $telefones);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$nomeEditado = ".,Lucas,.Patrick.,";
+
+//Remove todas as ocorrências que forem passadas no segundo parâmetro, apenas o que estiver nas ponstas da string
+echo trim($nomeEditado, ",.");
+
+//Remove todas as ocorrências que forem passadas no segundo parâmetro, apenas do início da string
+echo ltrim($nomeEditado, ",.");
+
+//Remove todas as ocorrências que forem passadas no segundo parâmetro, apenas do final da string
+echo rtrim($nomeEditado, ",.");
