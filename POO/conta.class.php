@@ -4,6 +4,21 @@ class Conta {
     private $cpfTitular;
     private $nomeTitular;
     private $saldo;
+    private static $numeroDeContas = 0;
+
+
+    public function __construct(string $cpfTitular, string $nomeTitular) {
+        $this->cpfTitular = $cpfTitular;
+        $this->validaNome($nomeTitular);
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+
+        self::$numeroDeContas++;
+    }
+
+    public function __destruct() {
+        self::$numeroDeContas--;
+    }
 
     public function sacar(float $valorSacar):void {
         if($valorSacar > $this->saldo) {
@@ -32,14 +47,6 @@ class Conta {
         $this->sacar($valorATransferir);
         $contaDestino->depositar($valorATransferir); 
     }
-    
-    public function defineCPF(string $cpf):void {
-        $this->cpfTitular = $cpf;
-    }
-
-    public function defineNome(string $nome):void {
-        $this->nomeTitular = $nome;
-    }
 
     public function recuperaSaldo():float {
         return $this->saldo;
@@ -51,5 +58,16 @@ class Conta {
 
     public function recuperaNomeTitular():string {
         return $this->nomeTitular;
+    }
+
+    private function validaNome(string $nomeTitular):void {
+        if(strlen($nomeTitular) < 5) {
+            echo "Nome precisa de pelo menos 5 caracteres";
+            exit;
+        }
+    }
+
+    public static function recuperaNumeroDeContas():int {
+        return self::$numeroDeContas;
     }
 }
