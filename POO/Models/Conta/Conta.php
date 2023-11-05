@@ -1,5 +1,9 @@
 <?php
 
+namespace Alura\Banco\Models\Conta;
+
+use Alura\Banco\Models\Conta\Titular;
+
 class Conta {
     private $titular;
     private $saldo;

@@ -1,5 +1,7 @@
 <?php
 
+namespace Alura\Banco\Models;
+
 class CPF
 {
     private string $cpf;
