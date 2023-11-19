@@ -20,7 +20,7 @@ abstract class Pessoa {
 		return $this->cpf->getCpf();
 	}
 
-    protected function validaNome(string $nomeTitular):void {
+    final protected function validaNome(string $nomeTitular):void {
         if(strlen($nomeTitular) < 5) {
             echo "Nome precisa de pelo menos 5 caracteres";
             exit;
