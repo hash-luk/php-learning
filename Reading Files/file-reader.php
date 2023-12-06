@@ -1,11 +1,10 @@
 <?php
 
 $file = fopen('lista.txt', 'r');
+$size = filesize('lista.txt');
 
-while(!feof($file)) {
-    $lista = fgets($file);
+$lista = fread($file, $size);
 
-    echo $lista;
-}
+echo $lista;
 
 fclose($file);
