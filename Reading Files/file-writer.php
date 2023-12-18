@@ -1,8 +1,8 @@
 <?php
 
-$arquivo = fopen('cursos.txt', 'w');
+$arquivo = fopen('cursos.txt', 'a');
 
-$curso = 'Programação';
+$curso = "\nProgramação";
 
 fwrite($arquivo, $curso);
 
