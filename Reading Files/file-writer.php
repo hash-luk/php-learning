@@ -1,9 +1,5 @@
 <?php
 
-$arquivo = fopen('cursos.txt', 'a');
 
 $curso = "\nProgramação";
-
-fwrite($arquivo, $curso);
-
-fclose($arquivo);
+ file_put_contents("cursos.txt", $curso, FILE_APPEND);
